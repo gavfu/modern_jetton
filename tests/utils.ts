@@ -1,5 +1,4 @@
-
-import { Address, toNano, fromNano } from "@ton/ton";
+import { Address, toNano, fromNano } from '@ton/ton';
 
 export const randomAddress = (wc: number = 0) => {
     const buf = Buffer.alloc(32);
@@ -9,10 +8,10 @@ export const randomAddress = (wc: number = 0) => {
     return new Address(wc, buf);
 };
 
-const getRandom = (min:number, max:number) => {
+const getRandom = (min: number, max: number) => {
     return Math.random() * (max - min) + min;
-}
+};
 
-export const getRandomTon = (min:number, max:number): bigint => {
+export const getRandomTon = (min: number, max: number): bigint => {
     return toNano(getRandom(min, max).toFixed(9));
-}
+};
